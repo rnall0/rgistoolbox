@@ -1,4 +1,5 @@
 library(rgdal)
+library(gdalUtils)
 library(rgeos)
 library(sp)
 library(maptools)
