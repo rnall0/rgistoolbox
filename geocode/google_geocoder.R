@@ -35,7 +35,7 @@ total<-nrow(initial)
 #cat("----------------------------------------------\n")
 counter<-0
 total<-nrow(initial)
-geo.dstk <- function(addr){ # single address geocode with google
+geo.google <- function(addr){ # single address geocode with google
   require(httr)
   require(rjson)
   url      <- "http://maps.googleapis.com/maps/api/geocode/json" #localhost:8082
@@ -50,7 +50,7 @@ geo.dstk <- function(addr){ # single address geocode with google
 
 
 #ptm<-proc.time()
-result.matrix <- do.call(rbind,lapply(as.character(paste(fulladdr, city, state, zip)),  geo.dstk ))
+result.matrix <- do.call(rbind,lapply(as.character(paste(fulladdr, city, state, zip)),  geo.google ))
 result_df<-data.frame(result.matrix)
 #elapse<-proc.time() - ptm
 #minutes<-elapse[[3]] / 60
