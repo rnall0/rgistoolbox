@@ -1,3 +1,7 @@
+library(XML)
+library(data.table)
+
+
 #-------------------------Data.table Method-------------------#
 
 system.time(doc<-xmlParse("data/2017/test.xml", useInternalNodes = TRUE))
